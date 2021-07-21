@@ -1,0 +1,10 @@
+----------------------------------
+cart-template.liquid
+----------------------------------
+
+<script>
+  fbq('track', 'AddToCart', {
+    value: {{ cart.total_price | money_without_currency | remove:',' | divided_by: 100 }},
+    currency: '{{ shop.currency }}',
+  });
+</script>
